@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="01a4c69b-3ead-4f97-a7a0-e766101fbd5a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PostgreSQL - entertainmentApp@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PostgreSQL - entertainmentApp@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="PostgreSQL - entertainmentApp@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="roles" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Enum" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VRWf37FYycvTxfRoG2nLG6Fzkc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.entertainmentApp.dao" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\javaEE_Projects\source\entertainmentApp\src\main\java\com\entertainmentApp" />
+      <recent name="C:\javaEE_Projects\source\entertainmentApp\src\main\resources" />
+      <recent name="C:\javaEE_Projects\source\entertainmentApp\src\main\java\com\entertainmentApp\hiberConf" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="entertainmentApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="entertainmentApp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.entertainmentApp.Application" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="01a4c69b-3ead-4f97-a7a0-e766101fbd5a" name="Default Changelist" comment="" />
+      <created>1577216487409</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577216487409</updated>
+      <workItem from="1577216489772" duration="1186000" />
+      <workItem from="1577217889773" duration="747000" />
+      <workItem from="1577359154363" duration="1677000" />
+      <workItem from="1577361074467" duration="633000" />
+      <workItem from="1577379112646" duration="1741000" />
+      <workItem from="1577382540399" duration="177000" />
+      <workItem from="1577382889519" duration="1525000" />
+      <workItem from="1577389147867" duration="1871000" />
+      <workItem from="1577391151430" duration="1772000" />
+      <workItem from="1577392984570" duration="1090000" />
+      <workItem from="1577394264456" duration="876000" />
+      <workItem from="1577446610279" duration="1757000" />
+      <workItem from="1577448780079" duration="1388000" />
+      <workItem from="1577452896962" duration="1727000" />
+      <workItem from="1577454808084" duration="1122000" />
+      <workItem from="1577721666071" duration="225000" />
+      <workItem from="1577722729972" duration="6798000" />
+      <workItem from="1577733335551" duration="4582000" />
+      <workItem from="1577740291490" duration="2278000" />
+      <workItem from="1577800133141" duration="3505000" />
+      <workItem from="1577803891479" duration="1529000" />
+      <workItem from="1577824815494" duration="4506000" />
+      <workItem from="1577993876345" duration="1232000" />
+      <workItem from="1578227232313" duration="6301000" />
+      <workItem from="1578305102586" duration="6368000" />
+      <workItem from="1579778891388" duration="2150000" />
+      <workItem from="1579863138725" duration="7674000" />
+      <workItem from="1580042549729" duration="6002000" />
+      <workItem from="1580118002526" duration="965000" />
+      <workItem from="1580130061092" duration="9876000" />
+      <workItem from="1580229926767" duration="5217000" />
+      <workItem from="1580304054115" duration="1014000" />
+      <workItem from="1580305159272" duration="240000" />
+      <workItem from="1580305436896" duration="86000" />
+      <workItem from="1580305864820" duration="1601000" />
+      <workItem from="1580308575906" duration="111000" />
+      <workItem from="1580308905776" duration="1181000" />
+      <workItem from="1580391171660" duration="1014000" />
+      <workItem from="1580393022251" duration="61000" />
+      <workItem from="1580393245421" duration="1806000" />
+      <workItem from="1580395230670" duration="1152000" />
+      <workItem from="1580396669811" duration="1749000" />
+      <workItem from="1580398870429" duration="1759000" />
+      <workItem from="1580400915375" duration="1676000" />
+      <workItem from="1580403101461" duration="1718000" />
+      <workItem from="1580405274095" duration="686000" />
+      <workItem from="1580407636547" duration="101000" />
+      <workItem from="1580409666153" duration="1618000" />
+      <workItem from="1580411568409" duration="898000" />
+      <workItem from="1580414657770" duration="1185000" />
+      <workItem from="1580419381351" duration="1432000" />
+      <workItem from="1580472620816" duration="1763000" />
+      <workItem from="1580474419640" duration="1028000" />
+      <workItem from="1580476292168" duration="2057000" />
+      <workItem from="1580647123577" duration="1843000" />
+      <workItem from="1580649312223" duration="1807000" />
+      <workItem from="1580651177766" duration="1756000" />
+      <workItem from="1580653105666" duration="1744000" />
+      <workItem from="1580654923847" duration="611000" />
+      <workItem from="1580660149488" duration="147000" />
+      <workItem from="1580660801195" duration="988000" />
+      <workItem from="1580661945124" duration="1451000" />
+      <workItem from="1580663466666" duration="1726000" />
+      <workItem from="1580665440364" duration="1774000" />
+      <workItem from="1580667267646" duration="131000" />
+      <workItem from="1580667567595" duration="1726000" />
+      <workItem from="1580669355533" duration="1289000" />
+      <workItem from="1580680648744" duration="174000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="21" key="#Assign_Data_Sources" timestamp="1580664163645">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="21" key="#Assign_Data_Sources/0.0.1366.728@0.0.1366.728" timestamp="1580664163645" />
+    <state x="275" y="21" key="#Inspections" timestamp="1580289001814">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="21" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1580289001814" />
+    <state x="275" y="21" key="#SQL_Dialects" timestamp="1580198409783">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="21" key="#SQL_Dialects/0.0.1366.728@0.0.1366.728" timestamp="1580198409783" />
+    <state x="517" y="43" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578229824543">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="43" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1578229824543" />
+    <state x="446" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580054502552">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="446" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1580054502552" />
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1580653668487">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1580653668487" />
+    <state x="313" y="52" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1578233022264">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="313" y="52" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1366.728@0.0.1366.728" timestamp="1578233022264" />
+    <state x="477" y="222" width="414" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1580421053778">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="477" y="222" width="414" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1580421053778" />
+    <state x="312" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577964487709">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="312" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1577964487709" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1578228073225">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1578228073225" />
+    <state width="1322" height="308" key="GridCell.Tab.0.bottom" timestamp="1580669872082">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="308" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580669872082" />
+    <state width="1322" height="308" key="GridCell.Tab.0.center" timestamp="1580669872081">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="308" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580669872081" />
+    <state width="1322" height="308" key="GridCell.Tab.0.left" timestamp="1580669872081">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="308" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580669872081" />
+    <state width="1322" height="308" key="GridCell.Tab.0.right" timestamp="1580669872081">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="308" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580669872081" />
+    <state width="1322" height="308" key="GridCell.Tab.1.bottom" timestamp="1580669872083">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="308" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580669872083" />
+    <state width="1322" height="308" key="GridCell.Tab.1.center" timestamp="1580669872082">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="308" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1580669872082" />
+    <state width="1322" height="308" key="GridCell.Tab.1.left" timestamp="1580669872082">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="308" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1580669872082" />
+    <state width="1322" height="308" key="GridCell.Tab.1.right" timestamp="1580669872083">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="308" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1580669872083" />
+    <state width="1322" height="54" key="GridCell.Tab.2.bottom" timestamp="1580663399866">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="54" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580663399866" />
+    <state width="1322" height="54" key="GridCell.Tab.2.center" timestamp="1580663399866">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="54" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1580663399866" />
+    <state width="1322" height="54" key="GridCell.Tab.2.left" timestamp="1580663399866">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="54" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1580663399866" />
+    <state width="1322" height="54" key="GridCell.Tab.2.right" timestamp="1580663399866">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1322" height="54" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1580663399866" />
+    <state x="213" y="18" key="Maven.ArtifactSearchDialog" timestamp="1578232907184">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="213" y="18" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1578232907184" />
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1580680647779">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580680647779" />
+    <state x="339" y="157" key="run.anything.popup" timestamp="1580650140997">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1580650140997" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1580306626153">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1580306626153" />
+    <state x="293" y="46" key="spring file set editor" timestamp="1580198976712">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="293" y="46" key="spring file set editor/0.0.1366.728@0.0.1366.728" timestamp="1580198976712" />
+  </component>
+</project>

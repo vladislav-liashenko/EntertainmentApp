@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html " charset="UTF-8"  >
+    <title>Hello</title>
+</head>
+<body>
+    <strong th:text="'Hello ' +${name} "></strong>
+</body>
+
+<div>
+    <form th:action="@{http://localhost:8090/catalog}">
+        <button style="color: forestgreen"  type="submit"> Catalog </button>
+    </form>
+</div>
+
+</html>

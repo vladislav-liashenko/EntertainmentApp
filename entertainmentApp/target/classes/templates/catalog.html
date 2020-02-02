@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html " charset="UTF-8"  >
+    <title>Catalog</title>
+    <style>
+        .textCenterRed {
+            text-align:  center;
+            color:crimson;
+        }
+    </style>
+</head>
+<body>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+
+<h3 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h3>
+
+<h4 th:inline="text" class="textCenterRed">Our Entertainment</h4>
+<div>Finder</div>
+<form method="post" th:action="@{/find}">
+    <input type="text"  name="name" />
+    <button  type="submit" value="Submit" >Filter</button>
+</form>
+<span th:text="${notfound}"/>
+<div>
+    <th:block th:each="entr:${entertainments}">
+        <strong th:text="${entr.id}"/>
+        <strong th:text="${entr.name}"/>
+        <span th:text="${entr.description}"/>
+        <strong th:text="${entr.address}" />
+        <strong th:text="${entr.date}"/>
+        <br>
+    </th:block>
+</div>
+</body>
+</html>
