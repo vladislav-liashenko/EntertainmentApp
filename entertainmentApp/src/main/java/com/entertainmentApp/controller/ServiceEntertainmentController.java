@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.*;
 
+import static java.lang.Long.parseLong;
+
 @Controller
-public class AddEntertainmentController {
+public class ServiceEntertainmentController {
+    //Admin(service)line
+    //http://localhost:8090/service
 
     private EntertainmentService entertainmentService;
     @Autowired
@@ -28,33 +32,24 @@ public class AddEntertainmentController {
         Entertainment entertainment =new Entertainment(name,description,
                 address, date);
         entertainmentService.save(entertainment);
-        return "add";
+        return "serviceEnter";
     }
-    @GetMapping("/add")
-    public String getAdd(Model model){
+    @GetMapping("/service")
+    public String getService(){ return "serviceEnter"; }
 
-       return "add";
-    }
-
-    @GetMapping("/catalog")
-    public String viewAdd(Model model){
+    @GetMapping("/view")
+    public String viewService(Model model){
         Iterable<Entertainment>entertainments=entertainmentService.findAll();
         model.addAttribute("entertainments",entertainments);
-        return "catalog";
+       return "serviceEnter";
     }
 
-    @PostMapping("/find")
-    public String findEntertainment(@RequestParam String name,Model model){
-       Iterable<Entertainment>entertainments=entertainmentService.findAll();
-       List<Entertainment>entertainmentsFinder=new ArrayList<>();
-        for (Entertainment entr:entertainments) {
-            if (entr.getName().equals(name)) {
-               entertainmentsFinder.add(entr);
-                        model.addAttribute("entertainments", entertainmentsFinder);
-            }
+    @PostMapping("/delete")
+    public String delEntertainment(@RequestParam Long id){
+        Entertainment entertainment=entertainmentService.findById(id);
+        if(entertainment!=null) {
+            entertainmentService.delete(entertainment);
         }
-
-    return "catalog";
+    return "serviceEnter";
     }
-
 }

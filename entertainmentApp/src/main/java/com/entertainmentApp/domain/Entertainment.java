@@ -2,6 +2,7 @@ package com.entertainmentApp.domain;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 public class Entertainment {
@@ -67,6 +68,5 @@ public class Entertainment {
     public void setId(Long id) {
         this.id = id;
     }
-
 
 }

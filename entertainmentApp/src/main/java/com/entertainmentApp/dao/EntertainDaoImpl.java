@@ -51,11 +51,18 @@ public class EntertainDaoImpl implements EntertainDao {
     }
 
     @Override
-    public Entertainment findByName(String name){
+    public Entertainment findById(Long id) {
+        Session session=sessionFactory.openSession();
+        Entertainment entertainment=session.byId(Entertainment.class).getReference(id);
+        session.close();
+        return entertainment;
+    }
+
+    @Override
+    public List<Entertainment> findByName(String name){
         Session session = sessionFactory.openSession();
         Criteria criteria=session.createCriteria(Entertainment.class);
-       Entertainment entertainment =(Entertainment) criteria.add(Restrictions.eq("name",name)).uniqueResult();
-        return entertainment;
+        return criteria.add(Restrictions.eq("name",name)).list();
     }
 
     @SuppressWarnings("unchecked")

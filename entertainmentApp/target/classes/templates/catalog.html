@@ -20,12 +20,16 @@
 <h3 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h3>
 
 <h4 th:inline="text" class="textCenterRed">Our Entertainment</h4>
+
+<form th:action="@{http://localhost:8090/catalog}">
+    <button style="color: forestgreen"  type="submit"> All catalog </button>
+</form>
+
 <div>Finder</div>
 <form method="post" th:action="@{/find}">
     <input type="text"  name="name" />
     <button  type="submit" value="Submit" >Filter</button>
 </form>
-<span th:text="${notfound}"/>
 <div>
     <th:block th:each="entr:${entertainments}">
         <strong th:text="${entr.id}"/>

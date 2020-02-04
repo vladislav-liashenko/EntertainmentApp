@@ -45,7 +45,14 @@ public class EntertainmentServiceImpl implements EntertainmentService {
 
     @Override
     @Transactional
-    public Entertainment findByName(String name) {
+    public List<Entertainment> findByName(String name) {
         return entertainDao.findByName(name);
     }
+
+    @Override
+    @Transactional
+    public Entertainment findById(Long id) {
+        return entertainDao.findById(id);
+    }
 }
+

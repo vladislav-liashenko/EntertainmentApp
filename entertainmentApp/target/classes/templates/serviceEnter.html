@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html " charset="UTF-8"  >
+    <title>Service</title>
+</head>
+<body>
+
+<div>
+<div> Add Entertainment </div>
+<form  method="post" th:action="@{/add}">
+    <input type="text" th:name="name" placeholder="name"/>
+    <input type="text" th:name="description" placeholder="description"/>
+    <input type="text" th:name="address" placeholder="address"/>
+    <input type="date" th:name="date" placeholder="date"/>
+    <button type="submit">  Enter </button>
+</form>
+</div>
+
+<div>
+    <div> Delete Entertainment </div>
+    <form method="post"th:action="@{/delete}">
+        <input type="number" th:name="id" placeholder="id"/>
+        <button style="color: brown" type="submit">  Delete </button>
+    </form>
+</div>
+
+<div>
+    <form th:action="@{http://localhost:8090/view}">
+        <button style="color: forestgreen"  type="submit"> Catalog </button>
+    </form>
+</div>
+
+<div>
+    <th:block th:each="entr:${entertainments}">
+        <strong th:text="${entr.id}"/>
+        <strong th:text="${entr.name}"/>
+        <span th:text="${entr.description}"/>
+        <strong th:text="${entr.address}" />
+        <strong th:text="${entr.date}"/>
+        <br>
+    </th:block>
+</div>
+
+<div>
+    <form th:action="@{http://localhost:8090/catalog}">
+        <button style="color: forestgreen"  type="submit"> UserCatalog </button>
+    </form>
+</div>
+
+</body>
+</html>

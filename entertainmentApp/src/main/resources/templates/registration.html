@@ -6,14 +6,6 @@
 </head>
 <body>
 
-<br/>
-<div th:if="${param.error}">
-    Invalid username and password.
-</div>
-<div th:if="${param.logout}">
-    You have been logged out.
-</div>
-
 <span th:text="${message}"/>
 
 <span text="'Add new user'"/>
@@ -22,5 +14,6 @@
     <div><label> Password: <input type="password" name="password"/> </label></div>
     <div><input type="submit" value="Sign Up"/></div>
 </form>
+
 </body>
 </html>

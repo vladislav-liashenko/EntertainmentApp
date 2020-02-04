@@ -9,5 +9,6 @@ public interface EntertainmentService {
     public void delete(Entertainment entertainment);
     public void update (Entertainment entertainment);
     public List<Entertainment> findAll();
-    public Entertainment findByName(String name);
+    public List<Entertainment> findByName(String name);
+    public Entertainment findById(Long id);
 }
