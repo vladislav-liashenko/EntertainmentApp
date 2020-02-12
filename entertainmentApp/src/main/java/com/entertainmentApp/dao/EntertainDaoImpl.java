@@ -14,10 +14,18 @@ import java.util.List;
 public class EntertainDaoImpl implements EntertainDao {
 
     private SessionFactory sessionFactory;
-    
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
     @Autowired
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
+    }
+
+    private Session getSession() {
+        Session session = sessionFactory.getCurrentSession();
+        return session;
     }
 
     public EntertainDaoImpl(){}
@@ -31,7 +39,6 @@ public class EntertainDaoImpl implements EntertainDao {
             session.close();
     }
 
-
     @Override
     public void delete(Entertainment entertainment) {
     Session session = sessionFactory.openSession();
@@ -43,36 +50,32 @@ public class EntertainDaoImpl implements EntertainDao {
 
     @Override
     public void update(Entertainment entertainment) {
-    Session session = sessionFactory.openSession();
-    Transaction tx1 = session.beginTransaction();
-    session.update(entertainment);
-    tx1.commit();
-    session.close();
+        Session session = sessionFactory.openSession();
+        Transaction tx1 = session.beginTransaction();
+        session.update(entertainment);
+        tx1.commit();
+        session.close();
     }
 
     @Override
     public Entertainment findById(Long id) {
-        Session session=sessionFactory.openSession();
-        Entertainment entertainment=session.byId(Entertainment.class).getReference(id);
-        session.close();
-        return entertainment;
+        Session session=getSession();
+        return  (Entertainment)session.get(Entertainment.class,id);
     }
 
     @Override
     public List<Entertainment> findByName(String name){
-        Session session = sessionFactory.openSession();
+        Session session = getSession();
         Criteria criteria=session.createCriteria(Entertainment.class);
         return criteria.add(Restrictions.eq("name",name)).list();
     }
 
     @SuppressWarnings("unchecked")
     public List<Entertainment> findAll() {
-        Session session=sessionFactory.getCurrentSession();
+        Session session=getSession();
         List<Entertainment>entertainments=session.createQuery("From Entertainment ").list();
         return entertainments;
 
     }
-
-
 
 }

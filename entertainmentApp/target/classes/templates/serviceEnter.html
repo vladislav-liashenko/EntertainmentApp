@@ -8,7 +8,7 @@
 
 <div>
 <div> Add Entertainment </div>
-<form  method="post" th:action="@{/add}">
+<form  method="post" th:action="@{/service/add}">
     <input type="text" th:name="name" placeholder="name"/>
     <input type="text" th:name="description" placeholder="description"/>
     <input type="text" th:name="address" placeholder="address"/>
@@ -19,14 +19,29 @@
 
 <div>
     <div> Delete Entertainment </div>
-    <form method="post"th:action="@{/delete}">
+    <form method="post"th:action="@{/service/delete}">
         <input type="number" th:name="id" placeholder="id"/>
         <button style="color: brown" type="submit">  Delete </button>
+        <br/>
+        <strong th:text="${delEntertainment}"/>
     </form>
 </div>
 
 <div>
-    <form th:action="@{http://localhost:8090/view}">
+    <div>Update Entertainment</div>
+    <form method="post"th:action="@{/service/update}">
+            <input type="number" th:name="id" placeholder="id"/>
+        <input type="text" th:name="description" placeholder="description"/>
+        <input type="text" th:name="address" placeholder="address"/>
+        <input type="date" th:name="date" placeholder="date"/>
+        <button type="submit">  Change </button>
+        <br/>
+        <strong th:text="${entertainment}"/>
+    </form>
+</div>
+
+<div>
+    <form th:action="@{http://localhost:8090/service/view}">
         <button style="color: forestgreen"  type="submit"> Catalog </button>
     </form>
 </div>

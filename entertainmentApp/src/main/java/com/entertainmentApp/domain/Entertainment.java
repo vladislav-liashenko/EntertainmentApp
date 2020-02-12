@@ -1,11 +1,12 @@
 package com.entertainmentApp.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
 @Entity
-public class Entertainment {
+public class Entertainment implements Serializable {
 
     private String name;
     private String description;
@@ -67,6 +68,27 @@ public class Entertainment {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Entertainment [" + " id=" + id+". "+
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", address='" + address + '\'' +
+                ", date=" + date +"]"
+               ;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Entertainment that = (Entertainment) o;
+        return Objects.equals(name, that.name) &&
+                Objects.equals(description, that.description) &&
+                Objects.equals(address, that.address) &&
+                Objects.equals(date, that.date) &&
+                Objects.equals(id, that.id);
     }
 
 }

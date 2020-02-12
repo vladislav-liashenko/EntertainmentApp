@@ -2,6 +2,7 @@ package com.entertainmentApp.service;
 
 import com.entertainmentApp.domain.Entertainment;
 import com.entertainmentApp.domain.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,5 +14,4 @@ public interface UserService {
     public void update (User user);
     public List<Entertainment> findAll();
     public User findByUsername(String username);
-
 }

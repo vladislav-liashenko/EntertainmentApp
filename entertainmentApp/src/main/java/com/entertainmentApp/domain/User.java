@@ -1,17 +1,24 @@
 package com.entertainmentApp.domain;
 
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Set;
+
+import static org.springframework.boot.devtools.restart.AgentReloader.isActive;
 
 @Entity
 @Table(name="usr")
-public class User  {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    
     private String username;
 
     private String password;
@@ -26,6 +33,8 @@ public class User  {
     public String getUsername() {
         return username;
     }
+
+
 
     public void setUsername(String username) {
         this.username = username;
