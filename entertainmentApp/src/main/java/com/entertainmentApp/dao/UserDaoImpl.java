@@ -2,13 +2,16 @@ package com.entertainmentApp.dao;
 
 import com.entertainmentApp.domain.Entertainment;
 import com.entertainmentApp.domain.User;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
@@ -19,6 +22,11 @@ public class UserDaoImpl implements UserDao {
     @Autowired
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
+    }
+
+    private Session getSession() {
+        Session session = sessionFactory.getCurrentSession();
+        return session;
     }
 
     @Override
@@ -52,16 +60,21 @@ public class UserDaoImpl implements UserDao {
     @Override
     @SuppressWarnings("unchecked")
     public List<Entertainment> findAll() {
-        Session session=sessionFactory.getCurrentSession();
+        Session session=getSession();
         List<Entertainment>users=session.createQuery("From User ").list();
         return users;
     }
 
     @Override
     public User findByUsername(String username) {
-        Session session = sessionFactory.openSession();
-        Criteria criteria=session.createCriteria(User.class);
-        User user =(User)criteria.add(Restrictions.eq("username",username)).uniqueResult();
+        Session session =sessionFactory.openSession();
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaQuery<User> cr = cb.createQuery(User.class);
+        Root<User> root = cr.from(User.class);
+        cr.select(root).
+                where(cb.like(root.get("username"), username));
+        Query query = session.createQuery(cr);
+        User user = (User) query.getSingleResult();
         session.close();
         return user;
     }

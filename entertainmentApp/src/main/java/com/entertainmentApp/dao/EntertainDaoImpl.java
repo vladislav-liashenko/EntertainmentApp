@@ -6,9 +6,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 @Repository
 public class EntertainDaoImpl implements EntertainDao {
@@ -65,9 +69,16 @@ public class EntertainDaoImpl implements EntertainDao {
 
     @Override
     public List<Entertainment> findByName(String name){
-        Session session = getSession();
-        Criteria criteria=session.createCriteria(Entertainment.class);
-        return criteria.add(Restrictions.eq("name",name)).list();
+        Session session = sessionFactory.openSession();
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaQuery<Entertainment> cr = cb.createQuery(Entertainment.class);
+        Root<Entertainment> root = cr.from(Entertainment.class);
+        cr.select(root).
+                where(cb.like(root.get("name"), name));
+        Query<Entertainment> query = session.createQuery(cr);
+        List<Entertainment> results = query.getResultList();
+        session.close();
+        return results;
     }
 
     @SuppressWarnings("unchecked")
