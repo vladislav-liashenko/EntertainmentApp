@@ -9,6 +9,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -16,9 +17,10 @@ import java.util.List;
 
 @Repository
 public class UserDaoImpl implements UserDao {
-    
+
 
     private SessionFactory sessionFactory;
+
     @Autowired
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
@@ -32,7 +34,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void save(User user) {
         Session session = sessionFactory.openSession();
-        Transaction tx1= session.beginTransaction();
+        Transaction tx1 = session.beginTransaction();
         session.save(user);
         tx1.commit();
         session.close();
@@ -42,7 +44,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void delete(User user) {
         Session session = sessionFactory.openSession();
-        Transaction tx1= session.beginTransaction();
+        Transaction tx1 = session.beginTransaction();
         session.delete(user);
         tx1.commit();
         session.close();
@@ -60,22 +62,26 @@ public class UserDaoImpl implements UserDao {
     @Override
     @SuppressWarnings("unchecked")
     public List<Entertainment> findAll() {
-        Session session=getSession();
-        List<Entertainment>users=session.createQuery("From User ").list();
+        Session session = getSession();
+        List<Entertainment> users = session.createQuery("From User ").list();
         return users;
     }
 
     @Override
     public User findByUsername(String username) {
-        Session session =sessionFactory.openSession();
-        CriteriaBuilder cb = session.getCriteriaBuilder();
-        CriteriaQuery<User> cr = cb.createQuery(User.class);
-        Root<User> root = cr.from(User.class);
-        cr.select(root).
-                where(cb.like(root.get("username"), username));
-        Query query = session.createQuery(cr);
-        User user = (User) query.getSingleResult();
-        session.close();
+        User user = null;
+        try {
+            Session session = sessionFactory.openSession();
+            CriteriaBuilder cb = session.getCriteriaBuilder();
+            CriteriaQuery<User> cr = cb.createQuery(User.class);
+            Root<User> root = cr.from(User.class);
+            cr.select(root).
+                    where(cb.like(root.get("username"), username));
+            Query<User> query = session.createQuery(cr);
+            user = (User) query.getSingleResult();
+            session.close();
+        } catch (NoResultException nre) {
+        }
         return user;
     }
 }
