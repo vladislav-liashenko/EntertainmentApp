@@ -1,11 +1,9 @@
 package com.entertainmentApp.dao;
 
 import com.entertainmentApp.domain.Entertainment;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,6 +19,9 @@ public class EntertainDaoImpl implements EntertainDao {
 
     private SessionFactory sessionFactory;
 
+    public EntertainDaoImpl() {
+    }
+
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }
@@ -31,11 +32,7 @@ public class EntertainDaoImpl implements EntertainDao {
     }
 
     private Session getSession() {
-        Session session = sessionFactory.getCurrentSession();
-        return session;
-    }
-
-    public EntertainDaoImpl() {
+        return sessionFactory.getCurrentSession();
     }
 
     @Override
@@ -84,7 +81,7 @@ public class EntertainDaoImpl implements EntertainDao {
             Query<Entertainment> query = session.createQuery(cr);
             results = query.getResultList();
             session.close();
-        } catch (NoResultException nre) {
+        } catch (NoResultException ignored) {
         }
         return results;
     }
@@ -92,8 +89,7 @@ public class EntertainDaoImpl implements EntertainDao {
     @SuppressWarnings("unchecked")
     public List<Entertainment> findAll() {
         Session session = getSession();
-        List<Entertainment> entertainments = session.createQuery("From Entertainment ").list();
-        return entertainments;
+        return (List<Entertainment>) session.createQuery("From Entertainment ").list();
 
     }
 

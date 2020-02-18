@@ -20,15 +20,16 @@ public class Entertainment implements Serializable {
     private Long id;
 
 
-    public Entertainment(String name, String description, String address,Date date) {
+    public Entertainment(String name, String description, String address, Date date) {
         this.name = name;
         this.description = description;
         this.address = address;
-        this.date=date;
+        this.date = date;
 
     }
 
-    public Entertainment() { }
+    public Entertainment() {
+    }
 
     public Date getDate() {
         return date;
@@ -72,13 +73,14 @@ public class Entertainment implements Serializable {
 
     @Override
     public String toString() {
-        return "Entertainment [" + " id=" + id+". "+
+        return "Entertainment [" + " id=" + id + ". " +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", address='" + address + '\'' +
-                ", date=" + date +"]"
-               ;
+                ", date=" + date + "]"
+                ;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

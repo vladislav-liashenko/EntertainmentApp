@@ -14,7 +14,8 @@ import java.util.Collections;
 @Controller
 public class RegistrationController {
 
-   private UserService userService;
+    private UserService userService;
+
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
@@ -26,17 +27,17 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String addUser( User user, Model model){
-       User userDb= userService.findByUsername(user.getUsername());
-       if(userDb!=null){
-           model.addAttribute("message","User exists");
-           return "registration";
-       }
-       user.setActive(true);
-       user.setRoles(Collections.singleton(Role.USER));
-       userService.save(user);
+    public String addUser(User user, Model model) {
+        User userDb = userService.findByUsername(user.getUsername());
+        if (userDb != null) {
+            model.addAttribute("message", "User exists");
+            return "registration";
+        }
+        user.setActive(true);
+        user.setRoles(Collections.singleton(Role.USER));
+        userService.save(user);
         return "redirect:/login";
-       }
-
     }
+
+}
 

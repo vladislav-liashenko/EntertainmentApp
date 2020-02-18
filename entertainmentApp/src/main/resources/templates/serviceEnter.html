@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta http-equiv="Content-Type" content="text/html " charset="UTF-8"  >
+    <meta http-equiv="Content-Type" content="text/html " charset="UTF-8">
     <title>Service</title>
 </head>
 <body>
 
 <div>
-<div> Add Entertainment </div>
-<form  method="post" th:action="@{/service/add}">
-    <input type="text" th:name="name" placeholder="name"/>
-    <input type="text" th:name="description" placeholder="description"/>
-    <input type="text" th:name="address" placeholder="address"/>
-    <input type="date" th:name="date" placeholder="date"/>
-    <button type="submit">  Enter </button>
-</form>
+    <div> Add Entertainment</div>
+    <form method="post" th:action="@{/service/add}">
+        <label>
+            <input type="text" th:name="name" placeholder="name"/>
+        </label>
+        <label>
+            <input type="text" th:name="description" placeholder="description"/>
+        </label>
+        <label>
+            <input type="text" th:name="address" placeholder="address"/>
+        </label>
+        <label>
+            <input type="date" th:name="date" placeholder="date"/>
+        </label>
+        <button type="submit"> Enter</button>
+    </form>
 </div>
 
 <div>
-    <div> Delete Entertainment </div>
-    <form method="post"th:action="@{/service/delete}">
-        <input type="number" th:name="id" placeholder="id"/>
-        <button style="color: brown" type="submit">  Delete </button>
+    <div> Delete Entertainment</div>
+    <form method="post" th:action="@{/service/delete}">
+        <label>
+            <input type="number" th:name="id" placeholder="id"/>
+        </label>
+        <button style="color: brown" type="submit"> Delete</button>
         <br/>
         <strong th:text="${delEntertainment}"/>
     </form>
@@ -29,12 +39,20 @@
 
 <div>
     <div>Update Entertainment</div>
-    <form method="post"th:action="@{/service/update}">
+    <form method="post" th:action="@{/service/update}">
+        <label>
             <input type="number" th:name="id" placeholder="id"/>
-        <input type="text" th:name="description" placeholder="description"/>
-        <input type="text" th:name="address" placeholder="address"/>
-        <input type="date" th:name="date" placeholder="date"/>
-        <button type="submit">  Change </button>
+        </label>
+        <label>
+            <input type="text" th:name="description" placeholder="description"/>
+        </label>
+        <label>
+            <input type="text" th:name="address" placeholder="address"/>
+        </label>
+        <label>
+            <input type="date" th:name="date" placeholder="date"/>
+        </label>
+        <button type="submit"> Change</button>
         <br/>
         <strong th:text="${entertainment}"/>
     </form>
@@ -42,7 +60,7 @@
 
 <div>
     <form th:action="@{http://localhost:8090/service/view}">
-        <button style="color: forestgreen"  type="submit"> Catalog </button>
+        <button style="color: forestgreen" type="submit"> Catalog</button>
     </form>
 </div>
 
@@ -51,7 +69,7 @@
         <strong th:text="${entr.id}"/>
         <strong th:text="${entr.name}"/>
         <span th:text="${entr.description}"/>
-        <strong th:text="${entr.address}" />
+        <strong th:text="${entr.address}"/>
         <strong th:text="${entr.date}"/>
         <br>
     </th:block>
@@ -59,7 +77,7 @@
 
 <div>
     <form th:action="@{http://localhost:8090/catalog}">
-        <button style="color: forestgreen"  type="submit"> UserCatalog </button>
+        <button style="color: forestgreen" type="submit"> UserCatalog</button>
     </form>
 </div>
 

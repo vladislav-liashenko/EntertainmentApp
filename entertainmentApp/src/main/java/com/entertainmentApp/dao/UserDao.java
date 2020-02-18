@@ -6,9 +6,13 @@ import com.entertainmentApp.domain.User;
 import java.util.List;
 
 public interface UserDao {
-        public void save(User user);
-        public void delete(User user);
-        public void update (User user);
-        public List<Entertainment> findAll();
-        public User findByUsername(String username);
+    void save(User user);
+
+    void delete(User user);
+
+    void update(User user);
+
+    List<Entertainment> findAll();
+
+    User findByUsername(String username);
 }

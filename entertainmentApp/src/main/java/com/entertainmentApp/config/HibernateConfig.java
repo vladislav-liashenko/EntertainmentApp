@@ -11,6 +11,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import java.util.Objects;
 import java.util.Properties;
 
 @Configuration
@@ -26,8 +27,8 @@ public class HibernateConfig {
     private Environment env;
 
     @Bean
-    public DataSource getDataSource(){
-        BasicDataSource dataSource=new BasicDataSource();
+    public DataSource getDataSource() {
+        BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName(env.getProperty("db.driver"));
         dataSource.setUrl(env.getProperty("db.url"));
         dataSource.setUsername(env.getProperty("db.username"));
@@ -36,20 +37,21 @@ public class HibernateConfig {
     }
 
     @Bean
-    public LocalSessionFactoryBean getSessionFactory(){
+    public LocalSessionFactoryBean getSessionFactory() {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         factoryBean.setDataSource(getDataSource());
 
-        Properties properties =new Properties();
-        properties.put("hibernate.show_sql",env.getProperty("hibernate.show_sql"));
-        properties.put("hibernate.hbm2ddl.auto",env.getProperty("hibernate.hbm2ddl.auto"));
+        Properties properties = new Properties();
+        properties.put("hibernate.show_sql", Objects.requireNonNull(env.getProperty("hibernate.show_sql")));
+        properties.put("hibernate.hbm2ddl.auto", Objects.requireNonNull(env.getProperty("hibernate.hbm2ddl.auto")));
 
         factoryBean.setHibernateProperties(properties);
-        factoryBean.setAnnotatedClasses(User.class,Entertainment.class);
-        return  factoryBean;
+        factoryBean.setAnnotatedClasses(User.class, Entertainment.class);
+        return factoryBean;
     }
+
     @Bean
-    public HibernateTransactionManager getTransactionManager(){
+    public HibernateTransactionManager getTransactionManager() {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(getSessionFactory().getObject());
         return transactionManager;

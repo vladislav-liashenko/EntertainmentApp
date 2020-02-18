@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
 
@@ -46,12 +49,12 @@ public class ServiceEntertainmentController {
     }
 
     @PostMapping("/delete")
-    public String delEntertainment(@RequestParam Long id,Model model) {
+    public String delEntertainment(@RequestParam Long id, Model model) {
         Entertainment entertainment = entertainmentService.findById(id);
-        if (entertainment!=null) {
+        if (entertainment != null) {
             entertainmentService.delete(entertainment);
             model.addAttribute("delEntertainment", "Deleted successful");
-        }else{
+        } else {
             model.addAttribute("delEntertainment", "This entertainment not exist");
         }
         return "serviceEnter";
@@ -63,7 +66,7 @@ public class ServiceEntertainmentController {
                                    @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date,
                                    Model model) {
         Entertainment entertainment = entertainmentService.findById(id);
-        if (entertainment!=null) {
+        if (entertainment != null) {
             entertainment.setDescription(description);
             entertainment.setAddress(address);
             entertainment.setDate(date);

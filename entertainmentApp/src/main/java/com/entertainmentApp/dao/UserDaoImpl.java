@@ -27,8 +27,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     private Session getSession() {
-        Session session = sessionFactory.getCurrentSession();
-        return session;
+        return sessionFactory.getCurrentSession();
     }
 
     @Override
@@ -63,8 +62,7 @@ public class UserDaoImpl implements UserDao {
     @SuppressWarnings("unchecked")
     public List<Entertainment> findAll() {
         Session session = getSession();
-        List<Entertainment> users = session.createQuery("From User ").list();
-        return users;
+        return (List<Entertainment>) session.createQuery("From User ").list();
     }
 
     @Override
@@ -80,7 +78,7 @@ public class UserDaoImpl implements UserDao {
             Query<User> query = session.createQuery(cr);
             user = (User) query.getSingleResult();
             session.close();
-        } catch (NoResultException nre) {
+        } catch (NoResultException ignored) {
         }
         return user;
     }

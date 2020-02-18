@@ -1,7 +1,6 @@
 package com.entertainmentApp.service;
 
 import com.entertainmentApp.dao.EntertainDao;
-
 import com.entertainmentApp.domain.Entertainment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,11 +12,14 @@ import java.util.List;
 public class EntertainmentServiceImpl implements EntertainmentService {
 
     private EntertainDao entertainDao;
+
     @Autowired
-    public void setEntertainDao(EntertainDao entertainDao){
-        this.entertainDao=entertainDao;
+    public void setEntertainDao(EntertainDao entertainDao) {
+        this.entertainDao = entertainDao;
     }
-    public EntertainmentServiceImpl(){}
+
+    public EntertainmentServiceImpl() {
+    }
 
     @Override
     @Transactional
@@ -28,13 +30,13 @@ public class EntertainmentServiceImpl implements EntertainmentService {
     @Override
     @Transactional
     public void delete(Entertainment entertainment) {
-    entertainDao.delete(entertainment);
+        entertainDao.delete(entertainment);
     }
 
     @Override
     @Transactional
     public void update(Entertainment entertainment) {
-    entertainDao.update(entertainment);
+        entertainDao.update(entertainment);
     }
 
     @Override

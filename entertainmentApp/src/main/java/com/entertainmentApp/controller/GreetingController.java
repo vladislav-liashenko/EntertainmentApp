@@ -10,9 +10,9 @@ public class GreetingController {
     //http://localhost:8090/
 
     @GetMapping("/")
-    public String greeting (
-            @RequestParam(name = "name",required = false,defaultValue = "user") String name, Model model){
-        model.addAttribute("name",name);
+    public String greeting(
+            @RequestParam(name = "name", required = false, defaultValue = "user") String name, Model model) {
+        model.addAttribute("name", name);
         return "greeting";
     }
 }

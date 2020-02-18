@@ -13,24 +13,25 @@ import java.util.List;
 
 @Controller
 public class CatalogController {
-    //Custum(user)line
+    //Custom(user)line
 
     private EntertainmentService entertainmentService;
+
     @Autowired
-    public void setEntertainmentService(EntertainmentService entertainmentService){
-        this.entertainmentService=entertainmentService;
+    public void setEntertainmentService(EntertainmentService entertainmentService) {
+        this.entertainmentService = entertainmentService;
     }
 
     @GetMapping("/catalog")
-    public String viewCatalog(Model model){
-        Iterable<Entertainment>entertainments=entertainmentService.findAll();
-        model.addAttribute("entertainments",entertainments);
+    public String viewCatalog(Model model) {
+        Iterable<Entertainment> entertainments = entertainmentService.findAll();
+        model.addAttribute("entertainments", entertainments);
         return "catalog";
     }
 
     @PostMapping("/find")
-    public String findEntertainment(@RequestParam String name, Model model){
-        List<Entertainment> entertainments=entertainmentService.findByName(name);
+    public String findEntertainment(@RequestParam String name, Model model) {
+        List<Entertainment> entertainments = entertainmentService.findByName(name);
         model.addAttribute("entertainments", entertainments);
         return "catalog";
     }
