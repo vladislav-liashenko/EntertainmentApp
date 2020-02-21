@@ -4,6 +4,7 @@ import com.entertainmentApp.domain.Role;
 import com.entertainmentApp.domain.User;
 import com.entertainmentApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,10 @@ import java.util.Collections;
 
 @Controller
 public class RegistrationController {
+
+
+    @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
 
     private UserService userService;
 
@@ -34,7 +39,8 @@ public class RegistrationController {
             return "registration";
         }
         user.setActive(true);
-        user.setRoles(Collections.singleton(Role.USER));
+        user.setRole(Collections.singleton(Role.USER));
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userService.save(user);
         return "redirect:/login";
     }

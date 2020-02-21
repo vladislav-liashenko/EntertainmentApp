@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
+@Table(name = "entertainments")
 public class Entertainment implements Serializable {
 
     private String name;

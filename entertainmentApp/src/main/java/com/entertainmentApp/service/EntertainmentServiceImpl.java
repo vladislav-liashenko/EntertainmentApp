@@ -13,12 +13,12 @@ public class EntertainmentServiceImpl implements EntertainmentService {
 
     private EntertainDao entertainDao;
 
+    public EntertainmentServiceImpl() {
+    }
+
     @Autowired
     public void setEntertainDao(EntertainDao entertainDao) {
         this.entertainDao = entertainDao;
-    }
-
-    public EntertainmentServiceImpl() {
     }
 
     @Override

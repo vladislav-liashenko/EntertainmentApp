@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "usr")
+@Table(name = "users")
 public class User {
 
     @Id
@@ -19,9 +19,12 @@ public class User {
     private Boolean active;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
+    @CollectionTable(name = "users_roles", joinColumns = @JoinColumn(name = "users_id"))
     @Enumerated(EnumType.STRING)
-    private Set<Role> roles;
+    private Set<Role> role;
+
+    public User() {
+    }
 
     public String getUsername() {
         return username;
@@ -56,12 +59,11 @@ public class User {
         this.active = active;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public Set<Role> getRole() {
+        return role;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setRole(Set<Role> role) {
+        this.role = role;
     }
-
 }
