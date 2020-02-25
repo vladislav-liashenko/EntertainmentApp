@@ -3,22 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="01a4c69b-3ead-4f97-a7a0-e766101fbd5a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/controller/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/domain/Entertainment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/domain/Entertainment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/domain/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/domain/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/service/EntertainmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/service/EntertainmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entertainmentApp/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/entertainmentApp/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/entertainmentApp/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/entertainmentApp/controller/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/entertainmentApp/controller/RegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/entertainmentApp/domain/Entertainment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/entertainmentApp/domain/Entertainment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/entertainmentApp/domain/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/entertainmentApp/domain/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/entertainmentApp/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/entertainmentApp/domain/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/entertainmentApp/service/EntertainmentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/entertainmentApp/service/EntertainmentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/entertainmentApp/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/entertainmentApp/service/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,6 +234,10 @@
       <workItem from="1582293516226" duration="1209000" />
       <workItem from="1582295345022" duration="1558000" />
       <workItem from="1582296982394" duration="256000" />
+      <workItem from="1582445185783" duration="593000" />
+      <workItem from="1582448383092" duration="362000" />
+      <workItem from="1582448913529" duration="96000" />
+      <workItem from="1582454331946" duration="10000" />
     </task>
     <servers />
   </component>
@@ -357,10 +345,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1581018130335" />
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1582296981748">
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1582448522898">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582296981748" />
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582448522898" />
     <state x="339" y="157" key="run.anything.popup" timestamp="1580824765777">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
