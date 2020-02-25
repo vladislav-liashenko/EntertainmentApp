@@ -1,6 +1,6 @@
 # my idea ignore
-/.idea/
+.idea/
 
 # my target ignore
-/target
+target/
 
