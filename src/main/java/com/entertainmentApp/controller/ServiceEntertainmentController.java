@@ -4,6 +4,7 @@ import com.entertainmentApp.domain.Entertainment;
 import com.entertainmentApp.service.EntertainmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,9 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Date;
 
 @Controller
+@PreAuthorize("hasAuthority('ADMIN')")
 @RequestMapping(value = "/service")
 public class ServiceEntertainmentController {
-    //Admin(service)line
+    //ADMIN(service)line
     //http://localhost:8090/service
 
     private EntertainmentService entertainmentService;

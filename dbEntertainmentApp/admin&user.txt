@@ -1,0 +1,7 @@
+ADMIN
+Login:Agent007
+Password:007
+
+User
+Login:Vladik
+Password:19

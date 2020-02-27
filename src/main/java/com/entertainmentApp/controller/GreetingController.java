@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class GreetingController {
-    //http://localhost:8090/
+
+    //http:/localhost:8090/
 
     @GetMapping("/")
     public String greeting(
