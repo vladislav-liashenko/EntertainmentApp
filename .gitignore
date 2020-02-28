@@ -4,3 +4,6 @@
 # my target ignore
 target/
 
+#test
+src/test/
+
