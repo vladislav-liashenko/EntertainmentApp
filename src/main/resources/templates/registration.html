@@ -3,16 +3,16 @@
 <head>
     <title>Sign Up</title>
 </head>
-<body>
+
 
 <span th:text="${message}"/>
 
-<span text="'Add new user'"/>
+<div>Add new user</div>
 <form th:action="@{/registration}" method="post">
     <div><label> User Name : <input type="text" name="username"/> </label></div>
     <div><label> Password: <input type="password" name="password"/> </label></div>
     <div><input type="submit" value="Sign Up"/></div>
 </form>
-
+<button><a th:href="@{http://localhost:8090/login}">Sign In</a></button>
 </body>
 </html>

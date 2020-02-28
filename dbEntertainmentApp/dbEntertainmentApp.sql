@@ -5,7 +5,7 @@
 -- Dumped from database version 9.6.16
 -- Dumped by pg_dump version 9.6.16
 
--- Started on 2020-02-27 19:51:12
+-- Started on 2020-02-28 16:20:36
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -18,18 +18,18 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
-DROP DATABASE "dbEntertainmentsApp";
+DROP DATABASE "dbEntertainmentApp";
 --
--- TOC entry 2142 (class 1262 OID 16601)
--- Name: dbEntertainmentsApp; Type: DATABASE; Schema: -; Owner: postgres
+-- TOC entry 2142 (class 1262 OID 16684)
+-- Name: dbEntertainmentApp; Type: DATABASE; Schema: -; Owner: postgres
 --
 
-CREATE DATABASE "dbEntertainmentsApp" WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'Ukrainian_Ukraine.1251' LC_CTYPE = 'Ukrainian_Ukraine.1251';
+CREATE DATABASE "dbEntertainmentApp" WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'Ukrainian_Ukraine.1251' LC_CTYPE = 'Ukrainian_Ukraine.1251';
 
 
-ALTER DATABASE "dbEntertainmentsApp" OWNER TO postgres;
+ALTER DATABASE "dbEntertainmentApp" OWNER TO postgres;
 
-\connect "dbEntertainmentsApp"
+\connect "dbEntertainmentApp"
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -64,7 +64,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- TOC entry 185 (class 1259 OID 16602)
+-- TOC entry 185 (class 1259 OID 16685)
 -- Name: entertainments; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -80,7 +80,7 @@ CREATE TABLE public.entertainments (
 ALTER TABLE public.entertainments OWNER TO postgres;
 
 --
--- TOC entry 188 (class 1259 OID 16621)
+-- TOC entry 186 (class 1259 OID 16691)
 -- Name: hibernate_sequence; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -95,7 +95,7 @@ CREATE SEQUENCE public.hibernate_sequence
 ALTER TABLE public.hibernate_sequence OWNER TO postgres;
 
 --
--- TOC entry 186 (class 1259 OID 16610)
+-- TOC entry 187 (class 1259 OID 16693)
 -- Name: users; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -110,7 +110,7 @@ CREATE TABLE public.users (
 ALTER TABLE public.users OWNER TO postgres;
 
 --
--- TOC entry 187 (class 1259 OID 16618)
+-- TOC entry 188 (class 1259 OID 16699)
 -- Name: users_roles; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -123,7 +123,7 @@ CREATE TABLE public.users_roles (
 ALTER TABLE public.users_roles OWNER TO postgres;
 
 --
--- TOC entry 2133 (class 0 OID 16602)
+-- TOC entry 2133 (class 0 OID 16685)
 -- Dependencies: 185
 -- Data for Name: entertainments; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -135,20 +135,21 @@ INSERT INTO public.entertainments (id, address, date, description, name) VALUES 
 INSERT INTO public.entertainments (id, address, date, description, name) VALUES (11, 'Verbitskogo 15', '2020-03-08', 'No bad cinema', 'Cinema');
 INSERT INTO public.entertainments (id, address, date, description, name) VALUES (12, 'Revutskogo 46', '2020-03-09', 'Goog billiards', 'Billiards');
 INSERT INTO public.entertainments (id, address, date, description, name) VALUES (13, 'Zoologichna 119', '2020-10-03', 'Good zoopark!', 'ZooPark');
+INSERT INTO public.entertainments (id, address, date, description, name) VALUES (14, 'Airfield "Kiev-South"', '2020-05-09', 'The best parachute jumps', 'Skydiving');
 
 
 --
 -- TOC entry 2146 (class 0 OID 0)
--- Dependencies: 188
+-- Dependencies: 186
 -- Name: hibernate_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.hibernate_sequence', 13, true);
+SELECT pg_catalog.setval('public.hibernate_sequence', 14, true);
 
 
 --
--- TOC entry 2134 (class 0 OID 16610)
--- Dependencies: 186
+-- TOC entry 2135 (class 0 OID 16693)
+-- Dependencies: 187
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -159,8 +160,8 @@ INSERT INTO public.users (id, active, password, username) VALUES (4, true, '$2a$
 
 
 --
--- TOC entry 2135 (class 0 OID 16618)
--- Dependencies: 187
+-- TOC entry 2136 (class 0 OID 16699)
+-- Dependencies: 188
 -- Data for Name: users_roles; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -171,7 +172,7 @@ INSERT INTO public.users_roles (users_id, role) VALUES (4, 'ADMIN');
 
 
 --
--- TOC entry 2012 (class 2606 OID 16609)
+-- TOC entry 2012 (class 2606 OID 16703)
 -- Name: entertainments entertainments_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -180,7 +181,7 @@ ALTER TABLE ONLY public.entertainments
 
 
 --
--- TOC entry 2014 (class 2606 OID 16617)
+-- TOC entry 2014 (class 2606 OID 16705)
 -- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -189,7 +190,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- TOC entry 2015 (class 2606 OID 16623)
+-- TOC entry 2015 (class 2606 OID 16706)
 -- Name: users_roles fkml90kef4w2jy7oxyqv742tsfc; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -206,7 +207,7 @@ ALTER TABLE ONLY public.users_roles
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2020-02-27 19:51:13
+-- Completed on 2020-02-28 16:20:36
 
 --
 -- PostgreSQL database dump complete

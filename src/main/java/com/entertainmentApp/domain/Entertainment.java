@@ -94,4 +94,8 @@ public class Entertainment implements Serializable {
                 Objects.equals(id, that.id);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, description, address, date, id);
+    }
 }
