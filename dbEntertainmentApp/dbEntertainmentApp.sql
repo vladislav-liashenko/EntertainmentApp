@@ -18,7 +18,6 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
-DROP DATABASE "dbEntertainmentApp";
 --
 -- TOC entry 2142 (class 1262 OID 16684)
 -- Name: dbEntertainmentApp; Type: DATABASE; Schema: -; Owner: postgres
