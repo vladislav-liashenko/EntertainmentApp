@@ -21,7 +21,7 @@ public class Entertainment implements Serializable {
     private Long id;
 
 
-    public Entertainment(String name, String description, String address, Date date) {
+    public Entertainment(final String name, final String description, final String address, final Date date) {
         this.name = name;
         this.description = description;
         this.address = address;
@@ -36,7 +36,7 @@ public class Entertainment implements Serializable {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(final Date date) {
         this.date = date;
     }
 
@@ -44,7 +44,7 @@ public class Entertainment implements Serializable {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(final String address) {
         this.address = address;
     }
 
@@ -52,7 +52,7 @@ public class Entertainment implements Serializable {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -60,7 +60,7 @@ public class Entertainment implements Serializable {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(final String description) {
         this.description = description;
     }
 
@@ -68,7 +68,7 @@ public class Entertainment implements Serializable {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 
@@ -78,14 +78,17 @@ public class Entertainment implements Serializable {
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", address='" + address + '\'' +
-                ", date=" + date + "]"
-                ;
+                ", date=" + date + "]";
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Entertainment that = (Entertainment) o;
         return Objects.equals(name, that.name) &&
                 Objects.equals(description, that.description) &&

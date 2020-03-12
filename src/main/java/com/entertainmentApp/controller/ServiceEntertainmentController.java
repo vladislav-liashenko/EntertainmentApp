@@ -24,14 +24,15 @@ public class ServiceEntertainmentController {
     private EntertainmentService entertainmentService;
 
     @Autowired
-    public void setEntertainmentService(EntertainmentService entertainmentService) {
+    public void setEntertainmentService(final EntertainmentService entertainmentService) {
         this.entertainmentService = entertainmentService;
     }
 
     @PostMapping("/add")
     public String addEntertainment(
-            @RequestParam String name, @RequestParam String description,
-            @RequestParam String address, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date) {
+            @RequestParam final String name, @RequestParam final String description,
+            @RequestParam final String address,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) final Date date) {
         Entertainment entertainment = new Entertainment(name, description,
                 address, date);
         entertainmentService.save(entertainment);
@@ -44,14 +45,14 @@ public class ServiceEntertainmentController {
     }
 
     @GetMapping("/view")
-    public String viewService(Model model) {
+    public String viewService(final Model model) {
         Iterable<Entertainment> entertainments = entertainmentService.findAll();
         model.addAttribute("entertainments", entertainments);
         return "serviceEnter";
     }
 
     @PostMapping("/delete")
-    public String delEntertainment(@RequestParam Long id, Model model) {
+    public String delEntertainment(@RequestParam final Long id, final Model model) {
         Entertainment entertainment = entertainmentService.findById(id);
         if (entertainment != null) {
             entertainmentService.delete(entertainment);
@@ -63,10 +64,10 @@ public class ServiceEntertainmentController {
     }
 
     @PostMapping("/update")
-    public String updEntertainment(@RequestParam Long id, @RequestParam String description,
-                                   @RequestParam String address,
-                                   @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date date,
-                                   Model model) {
+    public String updEntertainment(@RequestParam final Long id, @RequestParam final String description,
+                                   @RequestParam final String address,
+                                   @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) final Date date,
+                                   final Model model) {
         Entertainment entertainment = entertainmentService.findById(id);
         if (entertainment != null) {
             entertainment.setDescription(description);
@@ -79,5 +80,4 @@ public class ServiceEntertainmentController {
         }
         return "serviceEnter";
     }
-
 }

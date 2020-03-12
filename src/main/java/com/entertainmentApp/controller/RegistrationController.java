@@ -16,13 +16,17 @@ import java.util.Collections;
 public class RegistrationController {
 
 
-    @Autowired
-    BCryptPasswordEncoder bCryptPasswordEncoder;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     private UserService userService;
 
     @Autowired
-    public void setUserService(UserService userService) {
+    public void setbCryptPasswordEncoder(final BCryptPasswordEncoder bCryptPasswordEncoder) {
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    }
+
+    @Autowired
+    public void setUserService(final UserService userService) {
         this.userService = userService;
     }
 
@@ -32,7 +36,7 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String addUser(User user, Model model) {
+    public String addUser(final User user, final Model model) {
         User userDb = userService.findByUsername(user.getUsername());
         if (userDb != null) {
             model.addAttribute("message", "User exists");

@@ -27,7 +27,7 @@ public class EntertainDaoImpl implements EntertainDao {
     }
 
     @Autowired
-    public void setSessionFactory(SessionFactory sessionFactory) {
+    public void setSessionFactory(final SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
@@ -36,7 +36,7 @@ public class EntertainDaoImpl implements EntertainDao {
     }
 
     @Override
-    public void save(Entertainment entertainment) {
+    public void save(final Entertainment entertainment) {
         Session session = sessionFactory.openSession();
         Transaction tx1 = session.beginTransaction();
         session.save(entertainment);
@@ -45,7 +45,7 @@ public class EntertainDaoImpl implements EntertainDao {
     }
 
     @Override
-    public void delete(Entertainment entertainment) {
+    public void delete(final Entertainment entertainment) {
         Session session = sessionFactory.openSession();
         Transaction tx1 = session.beginTransaction();
         session.delete(entertainment);
@@ -54,7 +54,7 @@ public class EntertainDaoImpl implements EntertainDao {
     }
 
     @Override
-    public void update(Entertainment entertainment) {
+    public void update(final Entertainment entertainment) {
         Session session = sessionFactory.openSession();
         Transaction tx1 = session.beginTransaction();
         session.update(entertainment);
@@ -63,13 +63,13 @@ public class EntertainDaoImpl implements EntertainDao {
     }
 
     @Override
-    public Entertainment findById(Long id) {
+    public Entertainment findById(final Long id) {
         Session session = getSession();
         return (Entertainment) session.get(Entertainment.class, id);
     }
 
     @Override
-    public List<Entertainment> findByName(String name) {
+    public List<Entertainment> findByName(final String name) {
         List<Entertainment> results = null;
         try {
             Session session = sessionFactory.openSession();
@@ -92,5 +92,4 @@ public class EntertainDaoImpl implements EntertainDao {
         return (List<Entertainment>) session.createQuery("From Entertainment ").list();
 
     }
-
 }

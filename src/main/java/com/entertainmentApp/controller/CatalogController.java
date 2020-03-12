@@ -18,19 +18,30 @@ public class CatalogController {
     private EntertainmentService entertainmentService;
 
     @Autowired
-    public void setEntertainmentService(EntertainmentService entertainmentService) {
+    public void setEntertainmentService(final EntertainmentService entertainmentService) {
         this.entertainmentService = entertainmentService;
     }
 
+    /**
+     * This is method display catalog.
+     * @param model
+     * @return catalog
+     */
     @GetMapping("/catalog")
-    public String viewCatalog(Model model) {
+    public String viewCatalog(final Model model) {
         Iterable<Entertainment> entertainments = entertainmentService.findAll();
         model.addAttribute("entertainments", entertainments);
         return "catalog";
     }
 
+    /**
+     * This is method find entertainment by name.
+     * @param name
+     * @param model
+     * @return catalog
+     */
     @PostMapping("/find")
-    public String findEntertainment(@RequestParam String name, Model model) {
+    public String findEntertainment(@RequestParam final String name, final Model model) {
         List<Entertainment> entertainments = entertainmentService.findByName(name);
         model.addAttribute("entertainments", entertainments);
         return "catalog";

@@ -36,7 +36,7 @@ public class User implements UserDetails {
     }
 
 
-    public void setUsername(String username) {
+    public void setUsername(final String username) {
         this.username = username;
     }
 
@@ -44,7 +44,7 @@ public class User implements UserDetails {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(final Long id) {
         this.id = id;
     }
 
@@ -52,7 +52,7 @@ public class User implements UserDetails {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(final String password) {
         this.password = password;
     }
 
@@ -60,7 +60,7 @@ public class User implements UserDetails {
         return active;
     }
 
-    public void setActive(Boolean active) {
+    public void setActive(final Boolean active) {
         this.active = active;
     }
 
@@ -68,7 +68,7 @@ public class User implements UserDetails {
         return role;
     }
 
-    public void setRole(Set<Role> role) {
+    public void setRole(final Set<Role> role) {
         this.role = role;
     }
 

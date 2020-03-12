@@ -18,25 +18,25 @@ public class UserServiceImpl implements UserService {
     }
 
     @Autowired
-    public void setUserDao(UserDao userDao) {
+    public void setUserDao(final UserDao userDao) {
         this.userDao = userDao;
     }
 
     @Override
     @Transactional
-    public void save(User user) {
+    public void save(final User user) {
         userDao.save(user);
     }
 
     @Override
     @Transactional
-    public void delete(User user) {
+    public void delete(final User user) {
         userDao.delete(user);
     }
 
     @Override
     @Transactional
-    public void update(User user) {
+    public void update(final User user) {
         userDao.update(user);
     }
 
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public User findByUsername(String name) {
+    public User findByUsername(final String name) {
         return userDao.findByUsername(name);
     }
 

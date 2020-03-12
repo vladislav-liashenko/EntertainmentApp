@@ -17,25 +17,25 @@ public class EntertainmentServiceImpl implements EntertainmentService {
     }
 
     @Autowired
-    public void setEntertainDao(EntertainDao entertainDao) {
+    public void setEntertainDao(final EntertainDao entertainDao) {
         this.entertainDao = entertainDao;
     }
 
     @Override
     @Transactional
-    public void save(Entertainment entertainment) {
+    public void save(final Entertainment entertainment) {
         entertainDao.save(entertainment);
     }
 
     @Override
     @Transactional
-    public void delete(Entertainment entertainment) {
+    public void delete(final Entertainment entertainment) {
         entertainDao.delete(entertainment);
     }
 
     @Override
     @Transactional
-    public void update(Entertainment entertainment) {
+    public void update(final Entertainment entertainment) {
         entertainDao.update(entertainment);
     }
 
@@ -47,13 +47,13 @@ public class EntertainmentServiceImpl implements EntertainmentService {
 
     @Override
     @Transactional
-    public List<Entertainment> findByName(String name) {
+    public List<Entertainment> findByName(final String name) {
         return entertainDao.findByName(name);
     }
 
     @Override
     @Transactional
-    public Entertainment findById(Long id) {
+    public Entertainment findById(final Long id) {
         return entertainDao.findById(id);
     }
 }
