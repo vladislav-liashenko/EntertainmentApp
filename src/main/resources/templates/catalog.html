@@ -41,5 +41,10 @@
         <br>
     </th:block>
 </div>
+
+<div th:if="${author.equals('[ADMIN]')}">
+    <button><a th:href="@{http://localhost:8090/service}"> Entertainment service </a></button>
+</div>
+
 </body>
 </html>
