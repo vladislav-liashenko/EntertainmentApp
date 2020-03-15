@@ -14,7 +14,9 @@ public interface UserService {
 
     void update(User user);
 
-    List<Entertainment> findAll();
+    List<User> findAll();
 
     User findByUsername(String username);
+
+    User findById(Long id);
 }

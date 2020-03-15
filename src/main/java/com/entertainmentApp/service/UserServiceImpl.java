@@ -1,7 +1,6 @@
 package com.entertainmentApp.service;
 
 import com.entertainmentApp.dao.UserDao;
-import com.entertainmentApp.domain.Entertainment;
 import com.entertainmentApp.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,7 +41,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public List<Entertainment> findAll() {
+    public List<User> findAll() {
         return userDao.findAll();
     }
 
@@ -52,4 +51,9 @@ public class UserServiceImpl implements UserService {
         return userDao.findByUsername(name);
     }
 
+    @Override
+    @Transactional
+    public User findById(final Long id) {
+        return userDao.findById(id);
+    }
 }

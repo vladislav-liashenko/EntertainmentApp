@@ -4,18 +4,32 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html " charset="UTF-8">
     <title>Catalog</title>
+
     <style>
         .textCenterRed {
             text-align: center;
             color: crimson;
         }
+
+        .ref {
+            align: right;
+            color: olive;
+        }
     </style>
+
 </head>
 <body>
 
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="Sign Out"/>
 </form>
+
+<div th:if="${author == ('[ADMIN]')}">
+    <button><a th:href="@{http://localhost:8090/entrService}" class="ref"> Entertainment service </a></button>
+</div>
+<div th:if="${author == ('[ADMIN]')}">
+    <button><a th:href="@{http://localhost:8090/userService}" class="ref"> User service </a></button>
+</div>
 
 <h3 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h3>
 
@@ -42,10 +56,6 @@
         <strong th:text="${entr.date}"/>
         <br>
     </th:block>
-</div>
-
-<div th:if="${author == ('[ADMIN]')}">
-    <button><a th:href="@{http://localhost:8090/service}"> Entertainment service </a></button>
 </div>
 
 </body>

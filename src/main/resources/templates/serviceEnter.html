@@ -2,13 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta http-equiv="Content-Type" content="text/html " charset="UTF-8">
-    <title>Service</title>
+    <title>EnterService</title>
+
+    <style>
+        .ref {
+            text-align:right;
+            color: olive;
+        }
+    </style>
 </head>
 <body>
 
+<button><a th:href="@{http://localhost:8090/userService}" class="ref"> User service </a></button>
+
 <div>
     <div> Add Entertainment</div>
-    <form method="post" th:action="@{/service/add}">
+    <form method="post" th:action="@{/entrService/add}">
         <label>
             <input type="text" th:name="name" placeholder="name"/>
         </label>
@@ -27,11 +36,11 @@
 
 <div>
     <div> Delete Entertainment</div>
-    <form method="post" th:action="@{/service/delete}">
+    <form method="post" th:action="@{/entrService/delete}">
         <label>
             <input type="number" th:name="id" placeholder="id"/>
         </label>
-        <button style="color: brown" type="submit"> Delete</button>
+        <button type="submit"> Delete</button>
         <br/>
         <strong th:text="${delEntertainment}"/>
     </form>
@@ -39,7 +48,7 @@
 
 <div>
     <div>Update Entertainment</div>
-    <form method="post" th:action="@{/service/update}">
+    <form method="post" th:action="@{/entrService/update}">
         <label>
             <input type="number" th:name="id" placeholder="id"/>
         </label>
@@ -59,7 +68,7 @@
 </div>
 
 <div>
-    <form th:action="@{http://localhost:8090/service/view}">
+    <form th:action="@{http://localhost:8090/entrService/view}">
         <button style="color: forestgreen" type="submit"> Catalog</button>
     </form>
 </div>

@@ -16,7 +16,7 @@ import java.util.Date;
 
 @Controller
 @PreAuthorize("hasAuthority('ADMIN')")
-@RequestMapping(value = "/service")
+@RequestMapping(value = "/entrService")
 public class ServiceEntertainmentController {
     //ADMIN(service)line
     //http://localhost:8090/service

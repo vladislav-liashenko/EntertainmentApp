@@ -60,9 +60,21 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     @SuppressWarnings("unchecked")
-    public List<Entertainment> findAll() {
+    public List<User> findAll() {
         Session session = getSession();
-        return (List<Entertainment>) session.createQuery("From User ").list();
+        return (List<User>) session.createQuery("From User ").list();
+    }
+
+    @Override
+    public User findById(final Long id) {
+        Session session = getSession();
+        User user = null;
+        try {
+            user = (User) session.get(User.class, id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
     }
 
     @Override
@@ -82,4 +94,5 @@ public class UserDaoImpl implements UserDao {
         }
         return user;
     }
+
 }
