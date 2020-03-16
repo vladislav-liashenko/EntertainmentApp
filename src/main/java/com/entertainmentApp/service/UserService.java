@@ -1,6 +1,5 @@
 package com.entertainmentApp.service;
 
-import com.entertainmentApp.domain.Entertainment;
 import com.entertainmentApp.domain.User;
 import org.springframework.stereotype.Service;
 

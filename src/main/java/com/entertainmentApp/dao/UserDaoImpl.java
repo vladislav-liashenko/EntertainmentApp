@@ -1,6 +1,5 @@
 package com.entertainmentApp.dao;
 
-import com.entertainmentApp.domain.Entertainment;
 import com.entertainmentApp.domain.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
