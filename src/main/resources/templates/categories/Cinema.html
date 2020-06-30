@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html " charset="UTF-8">
+    <title>Cinema</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div style="text-align: center"> Cinema</div>
+<th:block th:each="entr : ${entertainments}">
+    <div th:if="${entr.getCategory().getName().equals('Cinema')}">
+        <strong th:text="${entr.getName()}"/>
+        <span th:text="${entr.getDescription()}"/>
+        <strong th:text="${entr.getAddress()}"/>
+        <strong th:text="${entr.getDate()}"/>
+        <div>
+            <img th:src="@{/img/entr.fileName}"/>
+        </div>
+        <br/>
+    </div>
+</th:block>
+
+</body>
+</html>

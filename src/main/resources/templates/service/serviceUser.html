@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html " charset="UTF-8">
+    <title>UserService</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .ref {
+            text-align: right;
+            color: olive;
+        }
+    </style>
+
+</head>
+<body>
+
+
+<button><a th:href="@{http://localhost:8090/EntrService}" class="ref"> Entertainment service </a></button>
+
+<button><a th:href="@{http://localhost:8090/catalog}" class="ref"> Catalog </a></button>
+
+<div>
+    <div>Delete User</div>
+    <form method="post" th:action="@{/UserService/delete}">
+        <label>
+            <input type="number" th:name="id" placeholder="id"/>
+        </label>
+        <button style="color: brown" type="submit"> Delete</button>
+        <br/>
+        <strong th:text="${delUser}"/>
+        <br/>
+    </form>
+</div>
+
+<div>
+    <div>Add admin</div>
+    <form method="post" th:action="@{/UserService/addAdmin}">
+        <label>
+            <input type="text" th:name="adminName" placeholder="AdminName">
+        </label>
+        <label>
+            <input type="text" th:name="adminPassword" placeholder="AdminPassword">
+        </label>
+        <button style="color: chartreuse" type="submit"> Enter</button>
+
+        <strong th:text="${message}"/>
+
+    </form>
+</div>
+
+<div>
+    <form th:action="@{http://localhost:8090/UserService/view}">
+        <button style="color: forestgreen" type="submit"> User List</button>
+    </form>
+</div>
+
+<div>
+    <th:block th:each="usr:${users}">
+        <strong th:text="${usr.id}"/>
+        <strong th:text="${usr.username}"/>
+        <span th:text="${usr.active}"/>
+        <strong th:text="${usr.getRole()}"/>
+        <br/>
+    </th:block>
+</div>
+
+</body>
+</html>

@@ -31,6 +31,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/registration").permitAll()
                 .anyRequest().authenticated()
                 .and()
+                .exceptionHandling().accessDeniedPage("/serviceEnter.html")
+                .and()
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()

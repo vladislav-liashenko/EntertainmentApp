@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8" content="text/html " http-equiv="Content-Type">
+    <title>Bowling</title>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
+</head>
+<body>
+
+<div style="text-align: center"> Bowling</div>
+<th:block th:each="entr : ${entertainments}">
+    <div th:if="${entr.getCategory().getName().equals('Bowling')}">
+        <strong th:text="${entr.getName()}"/>
+        <span th:text="${entr.getDescription()}"/>
+        <strong th:text="${entr.getAddress()}"/>
+        <strong th:text="${entr.getDate()}"/>
+        <div>
+            <img th:src="@{/img/entr.fileName}"/>
+        </div>
+    </div>
+</th:block>
+
+<!--<img th:src="@{/img/8498421d-dce1-4729-9cf9-72f3ff708a3a.1.jpg}" width="100" height="111" alt="photo1"/>-->
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 package com.entertainmentApp.service;
 
-import com.entertainmentApp.domain.User;
+import com.entertainmentApp.domain.user.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

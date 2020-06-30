@@ -1,4 +1,4 @@
-package com.entertainmentApp.domain;
+package com.entertainmentApp.domain.entertainment;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,7 +10,9 @@ import java.util.Objects;
 public class Entertainment implements Serializable {
 
     private String name;
+
     private String description;
+
     private String address;
 
     @Temporal(TemporalType.DATE)
@@ -20,17 +22,33 @@ public class Entertainment implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String fileName;
 
-    public Entertainment(final String name, final String description, final String address, final Date date) {
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+
+    public Entertainment(final String name, final String description, final String address,
+                         final Date date) {
         this.name = name;
         this.description = description;
         this.address = address;
         this.date = date;
-
     }
 
     public Entertainment() {
     }
+
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(final Category category) {
+        this.category = category;
+    }
+
 
     public Date getDate() {
         return date;
@@ -72,6 +90,15 @@ public class Entertainment implements Serializable {
         this.id = id;
     }
 
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(final String fileName) {
+        this.fileName = fileName;
+    }
+
+
     @Override
     public String toString() {
         return "Entertainment [" + " id=" + id + ". " +
@@ -101,4 +128,5 @@ public class Entertainment implements Serializable {
     public int hashCode() {
         return Objects.hash(name, description, address, date, id);
     }
+
 }

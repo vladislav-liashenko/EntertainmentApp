@@ -1,19 +1,34 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Sign Up</title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<span th:insert="menu.html :: navbar"></span>
 
 <span th:text="${message}"/>
+<div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+    <div class="top-cover center-block"></div>
+    <p class="top-name center-block text-center">
+    <h5>Registration</h5>
+    <form th:action="@{/registration}" method="post">
+        <label> User Name </label>
+        <div>
+            <input type="text" name="username"/>
+        </div>
+        <label> Password </label>
+        <div>
+            <input type="password" name="password"/>
+        </div>
+        <div><input type="submit" value="Sign Up"/></div>
+    </form>
+    </p>
 
-<div>Add new user</div>
-<form th:action="@{/registration}" method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Sign Up"/></div>
-</form>
-<button><a th:href="@{http://localhost:8090/login}">Sign In</a></button>
+</div>
 
 </body>
 

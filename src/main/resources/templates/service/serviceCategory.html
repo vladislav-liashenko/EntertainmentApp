@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html " charset="UTF-8">
+    <title>Category Service</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div>
+    <form th:action="@{http://localhost:8090/catalog}">
+        <button style="color: forestgreen" type="submit"> UserCatalog</button>
+    </form>
+</div>
+
+<div>
+    <div> Add Category</div>
+    <form method="post" th:action="@{/CategoryService/add}">
+        <label>
+            <input type="text" th:name="name" placeholder="name"/>
+        </label>
+        <button type="submit"> Save</button>
+        <span th:text="${exist}"/>
+    </form>
+</div>
+
+
+<div>
+    <form th:action="@{http://localhost:8090/CategoryService/view}">
+        <button style="color: forestgreen" type="submit"> Categories</button>
+    </form>
+
+</div>
+
+
+<div>
+    <th:block th:each="categ :${categories}">
+        <strong th:text="${categ.getName()}"/>
+        </br>
+    </th:block>
+</div>
+
+</body>
+</html>

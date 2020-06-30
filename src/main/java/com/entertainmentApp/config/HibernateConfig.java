@@ -1,7 +1,8 @@
 package com.entertainmentApp.config;
 
-import com.entertainmentApp.domain.Entertainment;
-import com.entertainmentApp.domain.User;
+import com.entertainmentApp.domain.entertainment.Category;
+import com.entertainmentApp.domain.entertainment.Entertainment;
+import com.entertainmentApp.domain.user.User;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
@@ -46,7 +47,7 @@ public class HibernateConfig {
         properties.put("hibernate.hbm2ddl.auto", Objects.requireNonNull(env.getProperty("hibernate.hbm2ddl.auto")));
 
         factoryBean.setHibernateProperties(properties);
-        factoryBean.setAnnotatedClasses(User.class, Entertainment.class);
+        factoryBean.setAnnotatedClasses(User.class, Entertainment.class, Category.class);
         return factoryBean;
     }
 
@@ -56,5 +57,4 @@ public class HibernateConfig {
         transactionManager.setSessionFactory(getSessionFactory().getObject());
         return transactionManager;
     }
-
 }

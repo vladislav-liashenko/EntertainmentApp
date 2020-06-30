@@ -1,60 +1,66 @@
 package com.entertainmentApp.service;
 
-import com.entertainmentApp.dao.EntertainDao;
-import com.entertainmentApp.domain.Entertainment;
+import com.entertainmentApp.dao.EntertainmentDao;
+import com.entertainmentApp.domain.entertainment.Entertainment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 public class EntertainmentServiceImpl implements EntertainmentService {
 
-    private EntertainDao entertainDao;
+    private EntertainmentDao entertainmentDao;
 
     public EntertainmentServiceImpl() {
     }
 
     @Autowired
-    public void setEntertainDao(final EntertainDao entertainDao) {
-        this.entertainDao = entertainDao;
+    public void setEntertainmentDao(final EntertainmentDao entertainmentDao) {
+        this.entertainmentDao = entertainmentDao;
     }
 
     @Override
     @Transactional
     public void save(final Entertainment entertainment) {
-        entertainDao.save(entertainment);
+        entertainmentDao.save(entertainment);
     }
 
     @Override
     @Transactional
     public void delete(final Entertainment entertainment) {
-        entertainDao.delete(entertainment);
+        entertainmentDao.delete(entertainment);
     }
 
     @Override
     @Transactional
     public void update(final Entertainment entertainment) {
-        entertainDao.update(entertainment);
+        entertainmentDao.update(entertainment);
     }
 
     @Override
     @Transactional
     public List<Entertainment> findAll() {
-        return entertainDao.findAll();
+        return entertainmentDao.findAll();
     }
 
     @Override
     @Transactional
     public List<Entertainment> findByName(final String name) {
-        return entertainDao.findByName(name);
+        return entertainmentDao.findByName(name);
     }
+//
+//    @Override
+//    @Transactional
+//    public List<Entertainment> findByDate(final Date date) {
+//        return entertainmentDao.findByDate(date);
+//    }
 
     @Override
     @Transactional
     public Entertainment findById(final Long id) {
-        return entertainDao.findById(id);
+        return entertainmentDao.findById(id);
     }
 }
 

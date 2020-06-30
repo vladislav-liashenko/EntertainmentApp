@@ -5,6 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html " charset="UTF-8">
     <title>Catalog</title>
 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <style>
         .textCenterRed {
             text-align: center;
@@ -15,48 +22,76 @@
             align: right;
             color: olive;
         }
+
+        .textUser {
+            text-align: center;
+            color: #009191;
+        }
+
+        .signOut {
+            text-align: center;
+            color: #c3a2ff;
+        }
+
+        .menu {
+            text-align: center;
+            color: #6c776d;
+        }
     </style>
 
 </head>
+
 <body>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
 
 <div th:if="${author == ('[ADMIN]')}">
-    <button><a th:href="@{http://localhost:8090/entrService}" class="ref"> Entertainment service </a></button>
+    <button><a th:href="@{http://localhost:8090/EntrService}" class="ref"> Entertainment service </a></button>
 </div>
 <div th:if="${author == ('[ADMIN]')}">
-    <button><a th:href="@{http://localhost:8090/userService}" class="ref"> User service </a></button>
+    <button><a th:href="@{http://localhost:8090/UserService}" class="ref"> User service </a></button>
+</div>
+<div th:if="${author == ('[ADMIN]')}">
+    <button><a th:href="@{http://localhost:8090/CategoryService}" class="ref"> Category service </a></button>
 </div>
 
-<h3 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h3>
-
-<h4 th:inline="text" class="textCenterRed">Our Entertainment</h4>
-
-<form th:action="@{http://localhost:8090/catalog}">
-    <button style="color: forestgreen" type="submit"> All catalog</button>
+<form class="signOut" th:action="@{/logout}" method="post">
+    <input class="btn btn-outline-secondary" type="submit" value="Sign Out"/>
 </form>
-
-<div>Find by name entertainment</div>
-
-<form method="post" th:action="@{/find}">
-    <label>
-        <input type="text" name="name"/>
-    </label>
-    <button type="submit" value="Submit">Filter</button>
-</form>
-
-<div>
-    <th:block th:each="entr:${entertainments}">
-        <strong th:text="${entr.name}"/>
-        <span th:text="${entr.description}"/>
-        <strong th:text="${entr.address}"/>
-        <strong th:text="${entr.date}"/>
-        <br>
-    </th:block>
+<br/>
+<div class="textUser">
+    <h3 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h3>
 </div>
+
+<h4 th:inline="text" class="textCenterRed">Entertainments</h4>
+
+<form th:action="@{http://localhost:8090}" class="menu">
+    <button type="submit" class="btn btn-dark"> Menu</button>
+</form>
+<br/>
+<form th:action="@{http://localhost:8090/catalog/cinema}">
+    <button class="btn btn-info btn-md btn-block" style="color: black"> Cinema</button>
+</form>
+
+<form th:action="@{http://localhost:8090/catalog/bowling}">
+    <button class="btn btn-info btn-md btn-block" style="color: black"> Bowling</button>
+</form>
+
+<form th:action="@{http://localhost:8090/catalog/zoopark}">
+    <button class="btn btn-info btn-md btn-block" style="color: black "> ZooPark</button>
+</form>
+
+
 
 </body>
 </html>

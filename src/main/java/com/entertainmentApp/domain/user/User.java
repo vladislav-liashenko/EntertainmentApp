@@ -1,6 +1,7 @@
-package com.entertainmentApp.domain;
+package com.entertainmentApp.domain.user;
 
 
+import com.entertainmentApp.domain.user.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -30,6 +31,7 @@ public class User implements UserDetails {
 
     public User() {
     }
+
 
     public String getUsername() {
         return username;

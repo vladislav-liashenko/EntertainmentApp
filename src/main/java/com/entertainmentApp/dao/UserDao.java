@@ -1,6 +1,6 @@
 package com.entertainmentApp.dao;
 
-import com.entertainmentApp.domain.User;
+import com.entertainmentApp.domain.user.User;
 
 import java.util.List;
 

@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html " charset="UTF-8">
     <title>EnterService</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <style>
         .ref {
-            text-align:right;
+            text-align: right;
             color: olive;
         }
     </style>
 </head>
 <body>
-
-<button><a th:href="@{http://localhost:8090/userService}" class="ref"> User service </a></button>
+<button><a th:href="@{http://localhost:8090/UserService}" class="ref"> User service </a></button>
 
 <div>
     <div> Add Entertainment</div>
-    <form method="post" th:action="@{/entrService/add}">
+    <form method="post" th:action="@{/EntrService/add}" enctype="multipart/form-data">
+
         <label>
             <input type="text" th:name="name" placeholder="name"/>
         </label>
@@ -27,16 +33,37 @@
         <label>
             <input type="text" th:name="address" placeholder="address"/>
         </label>
+
         <label>
             <input type="date" th:name="date" placeholder="date"/>
         </label>
-        <button type="submit"> Enter</button>
+
+        <label>
+            <select th:name="categoryName">
+                <option th:value="Cinema" th:text="Cinema"></option>
+                <option th:value="ZooPark" th:text="ZooPark"></option>
+                <option th:value="Bowling" th:text="Bowling"></option>
+            </select>
+        </label>
+
+        <label>
+            <input type="file" th:name="fileUpload">
+        </label>
+
+        <!--        <label>-->
+        <!--            <input type="file" th:name="fileUpload">-->
+        <!--        </label>-->
+
+        <input type="submit" value="Enter"/>
+        <div>
+            <span th:text="${messages}"/>
+        </div>
     </form>
 </div>
 
 <div>
     <div> Delete Entertainment</div>
-    <form method="post" th:action="@{/entrService/delete}">
+    <form method="post" th:action="@{/EntrService/delete}">
         <label>
             <input type="number" th:name="id" placeholder="id"/>
         </label>
@@ -48,7 +75,7 @@
 
 <div>
     <div>Update Entertainment</div>
-    <form method="post" th:action="@{/entrService/update}">
+    <form method="post" th:action="@{/EntrService/update}">
         <label>
             <input type="number" th:name="id" placeholder="id"/>
         </label>
@@ -61,14 +88,21 @@
         <label>
             <input type="date" th:name="date" placeholder="date"/>
         </label>
-        <button type="submit"> Change</button>
+        <input type="submit" value="Change"/>
         <br/>
         <strong th:text="${entertainment}"/>
+
     </form>
 </div>
 
 <div>
-    <form th:action="@{http://localhost:8090/entrService/view}">
+    <form th:action="@{http://localhost:8090/catalog}">
+        <button style="color: forestgreen" type="submit"> UserCatalog </button>
+    </form>
+</div>
+
+<div>
+    <form th:action="@{http://localhost:8090/EntrService/view}">
         <button style="color: forestgreen" type="submit"> Catalog</button>
     </form>
 </div>
@@ -80,14 +114,12 @@
         <span th:text="${entr.description}"/>
         <strong th:text="${entr.address}"/>
         <strong th:text="${entr.date}"/>
+        <div th:if="${entr.getFileName() != (null)}">
+            <!--            <img th:src="@{/img/entr.getFileName()}"/>-->
+            <strong th:text="${entr.fileName}"/>
+        </div>
         <br>
     </th:block>
-</div>
-
-<div>
-    <form th:action="@{http://localhost:8090/catalog}">
-        <button style="color: forestgreen" type="submit"> UserCatalog</button>
-    </form>
 </div>
 
 </body>

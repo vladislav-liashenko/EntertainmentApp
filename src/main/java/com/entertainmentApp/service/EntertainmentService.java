@@ -1,6 +1,6 @@
 package com.entertainmentApp.service;
 
-import com.entertainmentApp.domain.Entertainment;
+import com.entertainmentApp.domain.entertainment.Entertainment;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +16,8 @@ public interface EntertainmentService {
     List<Entertainment> findAll();
 
     List<Entertainment> findByName(String name);
+
+//    List<Entertainment> findByDate(Date date);
 
     Entertainment findById(Long id);
 }

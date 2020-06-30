@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <title>Sign In</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
+
+
+<span th:insert="menu.html :: navbar"></span>
 
 <div th:if="${param.error}">
     Invalid username and password.
@@ -13,16 +21,18 @@
 <div th:if="${param.logout}">
     You have been logged out.
 </div>
-
-<div>Login</div>
-
-<form th:action="@{/login}" method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Sign In"/></div>
-</form>
-
-<button><a th:href="@{http://localhost:8090/registration}">Sign Up</a></button>
-
+<div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+    <div class="top-cover center-block"></div>
+    <p class="top-name center-block text-center">
+    <h5>Login</h5>
+    <form th:action="@{/login}" method="post">
+        <label> User Name </label>
+        <div><input type="text" name="username"/></div>
+        <label> Password </label>
+        <div><input type="password" name="password"/></div>
+        <div><input type="submit" value="Sign In"/></div>
+    </form>
+    </p>
+</div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 package com.entertainmentApp.service;
 
-import com.entertainmentApp.domain.User;
+import com.entertainmentApp.domain.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

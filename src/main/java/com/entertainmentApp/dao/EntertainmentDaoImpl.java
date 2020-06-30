@@ -1,9 +1,8 @@
 package com.entertainmentApp.dao;
 
-import com.entertainmentApp.domain.Entertainment;
+import com.entertainmentApp.domain.entertainment.Entertainment;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,11 +14,11 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
-public class EntertainDaoImpl implements EntertainDao {
+public class EntertainmentDaoImpl implements EntertainmentDao {
 
     private SessionFactory sessionFactory;
 
-    public EntertainDaoImpl() {
+    public EntertainmentDaoImpl() {
     }
 
     public SessionFactory getSessionFactory() {
@@ -37,29 +36,20 @@ public class EntertainDaoImpl implements EntertainDao {
 
     @Override
     public void save(final Entertainment entertainment) {
-        Session session = sessionFactory.openSession();
-        Transaction tx1 = session.beginTransaction();
+        Session session = getSession();
         session.save(entertainment);
-        tx1.commit();
-        session.close();
     }
 
     @Override
     public void delete(final Entertainment entertainment) {
-        Session session = sessionFactory.openSession();
-        Transaction tx1 = session.beginTransaction();
+        Session session = getSession();
         session.delete(entertainment);
-        tx1.commit();
-        session.close();
     }
 
     @Override
     public void update(final Entertainment entertainment) {
-        Session session = sessionFactory.openSession();
-        Transaction tx1 = session.beginTransaction();
+        Session session = getSession();
         session.update(entertainment);
-        tx1.commit();
-        session.close();
     }
 
     @Override
@@ -72,7 +62,7 @@ public class EntertainDaoImpl implements EntertainDao {
     public List<Entertainment> findByName(final String name) {
         List<Entertainment> results = null;
         try {
-            Session session = sessionFactory.openSession();
+            Session session = getSession();
             CriteriaBuilder cb = session.getCriteriaBuilder();
             CriteriaQuery<Entertainment> cr = cb.createQuery(Entertainment.class);
             Root<Entertainment> root = cr.from(Entertainment.class);
@@ -80,11 +70,30 @@ public class EntertainDaoImpl implements EntertainDao {
                     where(cb.like(root.get("name"), name));
             Query<Entertainment> query = session.createQuery(cr);
             results = query.getResultList();
-            session.close();
         } catch (NoResultException ignored) {
         }
         return results;
     }
+
+//    @Override
+//    public List<Entertainment> findByDate(final @DateTimeFormat(pattern = "dd-MM-yyyy") Date date) {
+//        List<Entertainment> result = null;
+//
+//
+//        try {
+//            Session session = sessionFactory.openSession();
+//            CriteriaBuilder cb = session.getCriteriaBuilder();
+//            CriteriaQuery<Entertainment> cr = cb.createQuery(Entertainment.class);
+//            Root<Entertainment> root = cr.from(Entertainment.class);
+//            cr.select(root).
+//                    where(cb.like(root.get("date"), (Expression<String>) date));
+//            Query<Entertainment> query = session.createQuery(cr);
+//            result = query.getResultList();
+//            session.close();
+//        } catch (NoResultException nre) {
+//        }
+//        return result;
+//    }
 
     @SuppressWarnings("unchecked")
     public List<Entertainment> findAll() {
@@ -92,4 +101,5 @@ public class EntertainDaoImpl implements EntertainDao {
         return (List<Entertainment>) session.createQuery("From Entertainment ").list();
 
     }
+
 }

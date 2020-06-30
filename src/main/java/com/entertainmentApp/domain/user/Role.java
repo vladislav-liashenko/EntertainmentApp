@@ -1,4 +1,4 @@
-package com.entertainmentApp.domain;
+package com.entertainmentApp.domain.user;
 
 
 import org.springframework.security.core.GrantedAuthority;

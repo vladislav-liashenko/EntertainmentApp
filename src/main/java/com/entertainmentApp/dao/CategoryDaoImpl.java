@@ -1,6 +1,7 @@
 package com.entertainmentApp.dao;
 
-import com.entertainmentApp.domain.user.User;
+
+import com.entertainmentApp.domain.entertainment.Category;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -14,10 +15,13 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
-public class UserDaoImpl implements UserDao {
-
+public class CategoryDaoImpl implements CategoryDao {
 
     private SessionFactory sessionFactory;
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
 
     @Autowired
     public void setSessionFactory(final SessionFactory sessionFactory) {
@@ -28,59 +32,48 @@ public class UserDaoImpl implements UserDao {
         return sessionFactory.getCurrentSession();
     }
 
+
     @Override
-    public void save(final User user) {
+    public void save(final Category category) {
         Session session = getSession();
-        session.save(user);
+        session.save(category);
     }
 
     @Override
-    public void delete(final User user) {
+    public void delete(final Category category) {
         Session session = getSession();
-        session.delete(user);
+        session.delete(category);
     }
 
     @Override
-    public void update(final User user) {
+    public void update(final Category category) {
         Session session = getSession();
-        session.update(user);
+        session.update(category);
+        session.close();
     }
 
-    @Override
     @SuppressWarnings("unchecked")
-    public List<User> findAll() {
+    @Override
+    public List<Category> findAll() {
         Session session = getSession();
-        return (List<User>) session.createQuery("From User ").list();
+        return (List<Category>) session.createQuery("From Category ").list();
     }
 
     @Override
-    public User findById(final Long id) {
-        Session session = getSession();
-        User user = null;
-        try {
-            user = (User) session.get(User.class, id);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return user;
-    }
+    public Category findByName(final String name) {
 
-    @Override
-    public User findByUsername(final String username) {
-        User user = null;
+        Category results = null;
         try {
             Session session = getSession();
             CriteriaBuilder cb = session.getCriteriaBuilder();
-            CriteriaQuery<User> cr = cb.createQuery(User.class);
-            Root<User> root = cr.from(User.class);
+            CriteriaQuery<Category> cr = cb.createQuery(Category.class);
+            Root<Category> root = cr.from(Category.class);
             cr.select(root).
-                    where(cb.like(root.get("username"), username));
-            Query<User> query = session.createQuery(cr);
-            user = (User) query.getSingleResult();
+                    where(cb.like(root.get("name"), name));
+            Query<Category> query = session.createQuery(cr);
+            results = query.getSingleResult();
         } catch (NoResultException ignored) {
-            ignored.printStackTrace();
         }
-        return user;
+        return results;
     }
-
 }

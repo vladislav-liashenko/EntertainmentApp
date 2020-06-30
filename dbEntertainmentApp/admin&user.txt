@@ -1,8 +1,0 @@
-ADMIN
-//http://localhost:8090/service
-Login:Agent007
-Password:007
-
-USER
-Login:Vladik
-Password:19

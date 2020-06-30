@@ -1,10 +1,10 @@
 package com.entertainmentApp.dao;
 
-import com.entertainmentApp.domain.Entertainment;
+import com.entertainmentApp.domain.entertainment.Entertainment;
 
 import java.util.List;
 
-public interface EntertainDao {
+public interface EntertainmentDao {
     void save(Entertainment entertainment);
 
     void delete(Entertainment entertainment);
@@ -15,5 +15,8 @@ public interface EntertainDao {
 
     List<Entertainment> findByName(String name);
 
+//    List<Entertainment> findByDate(Date date);
+
     Entertainment findById(Long id);
+
 }

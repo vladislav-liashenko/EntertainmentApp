@@ -1,7 +1,7 @@
 package com.entertainmentApp.controller;
 
-import com.entertainmentApp.domain.Role;
-import com.entertainmentApp.domain.User;
+import com.entertainmentApp.domain.user.Role;
+import com.entertainmentApp.domain.user.User;
 import com.entertainmentApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
