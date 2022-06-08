@@ -4,5 +4,5 @@
 # my target ignore
 target/
 
-#test
+#tests
 src/test/
